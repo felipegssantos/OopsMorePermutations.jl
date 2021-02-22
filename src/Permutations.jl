@@ -1,4 +1,4 @@
-module PermutationGroup
+module Permutations
 
 using LinearAlgebra: I
 
