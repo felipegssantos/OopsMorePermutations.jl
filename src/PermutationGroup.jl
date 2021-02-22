@@ -3,9 +3,13 @@ module PermutationGroup
 using LinearAlgebra: I
 
 # TODO: random transposition; once we have this, monte carlo over
-# permutations is easy to implement
+#  permutations is easy to implement
+# TODO: inverse permutation
+# TODO: permutation distance
+# TODO: make Permutation extend AbstractArray in order to writw
+#  v[p] instead of v[p.value]
 
-export Permutation
+export Permutation, to_matrix
 
 @doc """
 If p is a Permutation instance and v is some vector,
@@ -36,7 +40,7 @@ Returns the permutation p1∘p2 obtaining by first applying p2
 and then p1.
 """
 function Base.:*(p1::Permutation{T}, p2::Permutation{T}) where T <: Integer
-    return Permutation(p1.value[p2.value])  # TODO: verify!
+    return Permutation(p1.value[p2.value])
 end
 
 Base.length(p::Permutation{T}) where {T<:Integer} = length(p.value)
@@ -50,7 +54,7 @@ function from_matrix(m::Array{T,2} where T <: Real)
     if (all(x in [0,1] for x in m) && all(s == 1 for s in sum(m, dims=1))
                                    && all(s == 1 for s in sum(m, dims=2)))
         p::Vector{Int} = m * Vector(1:size(m)[1])
-        return Permutation(p)  # TODO: verify!
+        return Permutation(p)
     else
         error("Not a permutation matrix")
     end
