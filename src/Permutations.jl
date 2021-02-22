@@ -6,7 +6,7 @@ using LinearAlgebra: I
 #  permutations is easy to implement
 # TODO: inverse permutation
 # TODO: permutation distance
-# TODO: make Permutation extend AbstractArray in order to writw
+# TODO: make Permutation extend AbstractArray in order to write
 #  v[p] instead of v[p.value]
 
 export Permutation, to_matrix
