@@ -1,6 +1,6 @@
 using Test
 
-using Permutations
+using OopsMorePermutations
 
 @testset "Permutations.jl" begin
     include("type_basics.jl")

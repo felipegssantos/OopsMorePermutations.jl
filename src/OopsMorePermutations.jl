@@ -1,9 +1,8 @@
-module Permutations
+module OopsMorePermutations
 
+using Distributions
 using LinearAlgebra: I
 
-# TODO: random transposition; once we have this, monte carlo over
-#  permutations is easy to implement
 # TODO: inverse permutation
 # TODO: permutation distance
 # TODO: make Permutation extend AbstractArray in order to write
